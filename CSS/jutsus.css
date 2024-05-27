@@ -1,0 +1,25 @@
+/* Estilo para que las imágenes se oscurezcan al pasar el mouse */
+.imagen:hover {
+    filter: brightness(70%);
+    cursor: pointer;
+}
+
+.imagen {
+    max-width: 300px; /* Ancho máximo de la imagen */
+    max-height: 200px; /* Altura máxima de la imagen */
+    width: auto; /* Para que la imagen mantenga su relación de aspecto original */
+    height: auto; /* Para que la imagen mantenga su relación de aspecto original */
+}
+
+ul {
+    display: flex; /* Para que los elementos <li> se muestren en línea */
+    flex-wrap: wrap;
+    list-style-type: none; /* Para quitar los estilos de lista predeterminados */
+    padding: 0; /* Para eliminar el relleno predeterminado del elemento <ul> */
+    justify-content: center;
+}
+
+li {
+    margin-right: 20px; /* Espacio entre cada elemento <li> */
+    flex-basis: calc(25 - 10px);
+}
