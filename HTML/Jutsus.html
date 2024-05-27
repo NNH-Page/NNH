@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos de Ninjas</title>
-
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/StyleIndex.css">
     
+    <style>
+        /* Estilo para que las imágenes se oscurezcan al pasar el mouse */
+        .imagen:hover {
+            filter: brightness(70%);
+            cursor: pointer;
+        }
+        
+        .imagen {
+            max-width: 300px; /* Ancho máximo de la imagen */
+            max-height: 200px; /* Altura máxima de la imagen */
+            width: auto; /* Para que la imagen mantenga su relación de aspecto original */
+            height: auto; /* Para que la imagen mantenga su relación de aspecto original */
+        }
+
+        ul {
+            display: flex; /* Para que los elementos <li> se muestren en línea */
+            flex-wrap: wrap;
+            list-style-type: none; /* Para quitar los estilos de lista predeterminados */
+            padding: 0; /* Para eliminar el relleno predeterminado del elemento <ul> */
+            justify-content: center;
+        }
+
+        li {
+            margin-right: 20px; /* Espacio entre cada elemento <li> */
+            flex-basis: calc(25 - 10px);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,6 +45,45 @@
         <a href="#jutsus">Jutsus</a>
     </nav>
 
+    <ul>
+        <li>
+            <div onclick="window.location.href='pagina1.html'">
+                <img src="../IMAGENES/JutsuFuego.jfif" alt="Imagen 1" class="imagen">
+                <div class="texto-encima">Texto sobre imagen 1</div>
+            </div>
+        </li>
+
+        <li>
+            <div onclick="window.location.href='pagina2.html'">
+                <img src="../IMAGENES/JustuTierra.jfif" alt="Imagen 2" class="imagen">
+                <div class="texto-encima">Texto sobre imagen 2</div>
+            </div>
+        </li>
+
+        <li>
+            <div onclick="window.location.href='pagina3.html'">
+                <img src="../IMAGENES/JutsuAgua.jpg" alt="Imagen 3" class="imagen">
+                <div class="texto-encima">Texto sobre imagen 3</div>
+            </div>
+        </li>
+
+        <li>
+            <div onclick="window.location.href='pagina4.html'">
+                <img src="../IMAGENES/JustuRayo.jfif" alt="Imagen 4" class="imagen">
+                <div class="texto-encima">Texto sobre imagen 4</div>
+            </div>
+        </li>
+
+        <li>
+            <div onclick="window.location.href='pagina5.html'">
+                <img src="../IMAGENES/JutsuViento.jpg" alt="Imagen 5" class="imagen">
+                <div class="texto-encima">Texto sobre imagen 5</div>
+            </div>
+        </li>
+    </ul>
+
     <footer>
         &copy; 2024 NNH - Todos los derechos reservados
     </footer>
+</body>
+</html>
