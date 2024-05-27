@@ -1,0 +1,1 @@
+from .UsserShinobi.UsserShinobiClass import *
