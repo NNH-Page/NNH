@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const apiEndpoint = 'https://6654000b1c6af63f46761430.mockapi.io/index/UserPj';
-    const tableBody = document.querySelector('#ninja-table tbody');
+    const primeraGeneracionTable = document.querySelector('#ninja-table-primerageneracion tbody');
+    const segundaGeneracionTable = document.querySelector('#ninja-table-segundageneracion tbody');
+    const terceraGeneracionTable = document.querySelector('#ninja-table-tercerageneracion tbody');
     const errorMessage = document.getElementById('error-message');
 
     const fetchData = async () => {
@@ -12,21 +14,31 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             displayData(data);
         } catch (error) {
-            errorMessage.textContent = error.message;
+            console.error('Error al obtener los datos:', error);
         }
     };
 
     const displayData = (data) => {
-        const rows = data.map(ninja => `
-            <tr>
-                <td>${ninja.Nombre}</td>
-                <td>${ninja.Clan}</td>
-                <td>${ninja.Aldea}</td>
-                <td>${ninja.Rango}</td>
-            </tr>
-        `).join('');
-        tableBody.innerHTML = rows;
+        data.forEach(ninja => {
+            const newRow = `
+                <tr>
+                    <td>${ninja.Nombre}</td>
+                    <td>${ninja.Clan}</td>
+                    <td>${ninja.Aldea}</td>
+                    <td>${ninja.Rango}</td>
+                </tr>
+            `;
+
+            if (ninja.Generacion === "1") {
+                primeraGeneracionTable.innerHTML += newRow;
+            } else if (ninja.Generacion === "2") {
+                segundaGeneracionTable.innerHTML += newRow;
+            }else if (ninja.Generacion === "3") {
+                terceraGeneracionTable.innerHTML += newRow;
+            }
+        });
     };
 
     fetchData();
 });
+

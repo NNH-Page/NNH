@@ -9,18 +9,19 @@ def GetApiGlobal():
     Get= requests.get(url)
     pprint(json.loads(Get.text)) 
     
-def GetApiGlobalEspecifica():
+def GetApiGlobalEspecifica(id):
     Get= requests.get(f"{url}/{id}")
     pprint(json.loads(Get.text)) 
     
 
-def PostApi(Nombre, Clan , Aldea , Rango):
+def PostApi(Nombre, Clan , Aldea , Rango, Generacion):
  
     Info =  {
   "Nombre": Nombre ,
   "Clan": Clan,
   "Aldea": Aldea,
-  "Rango": Rango}
+  "Rango": Rango,
+  "Generacion": Generacion}
     
     Post= requests.post(url,data=Info)
     pprint(Post.text)
@@ -32,13 +33,18 @@ def delete(id):
     print(Del.text)
 
 
-def Put(id,Nombre, Clan , Aldea , Rango):
+def Put(id,Nombre, Clan , Aldea , Rango, Generacion):
     endpoint = f"{url}/{id}"
     Info =  {
     "Nombre": Nombre ,
     "Clan": Clan,
     "Aldea": Aldea,
-    "Rango": Rango}
+    "Rango": Rango,
+    "Generacion":Generacion}
     put = requests.put(endpoint,data=Info)
     print(put.text)
+
+
+    
+    
 
