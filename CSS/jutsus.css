@@ -8,7 +8,12 @@
     max-width: 300px; /* Ancho máximo de la imagen */
     max-height: 200px; /* Altura máxima de la imagen */
     width: auto; /* Para que la imagen mantenga su relación de aspecto original */
+    height: auto; /* Para que la imagen mantenga su relación de aspecto original */ max-width: 100%; /* Ancho máximo de la imagen */
+    max-height: 200px; /* Altura máxima de la imagen */
+    width: auto; /* Para que la imagen mantenga su relación de aspecto original */
     height: auto; /* Para que la imagen mantenga su relación de aspecto original */
+    margin: 10px; /* Espacio entre cada imagen */
+    position: relative; /* Establece el contexto de posicionamiento para el contenido superpuesto */
 }
 
 ul {
@@ -22,4 +27,24 @@ ul {
 li {
     margin-right: 20px; /* Espacio entre cada elemento <li> */
     flex-basis: calc(25 - 10px);
+}
+
+.imagen:hover {
+    filter: brightness(70%);
+    cursor: pointer;
+}
+
+
+.texto-encima {
+    position: absolute; /* Posiciona el texto en relación con el contenedor de la imagen */
+    top: 50%; /* Lo coloca en la mitad superior del contenedor */
+    left: 50%; /* Lo coloca en el centro del contenedor */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espacio alrededor del texto */
+    opacity: 0; /* El texto es invisible por defecto */
+    
+}
+
+.imagen:hover .texto-encima {
+    opacity: 10; /* Hace visible el texto cuando se pasa el mouse sobre la imagen */
 }

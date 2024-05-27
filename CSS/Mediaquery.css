@@ -1,0 +1,17 @@
+/* Estilos para pantallas de hasta 768px de ancho */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 5px 0;
+    }
+
+    nav a {
+        padding: 0 5px;
+    }
+}
+
+/* Estilos para pantallas de hasta 480px de ancho */
+@media screen and (max-width: 480px) {
+    header, footer {
+        padding: 10px 0;
+    }
+}
