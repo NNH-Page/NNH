@@ -1,0 +1,78 @@
+body {
+    background-color: #f4f4f4;
+    font-family:  'Arial Narrow', Arial, sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff6f61;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 5px solid #333;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #ff6f61;
+}
+
+
+.SideBar {
+    width: 250px; /* Ancho de la sidebar */
+    background-color: #f4f4f4; /* Color de fondo */
+    margin-top: 5%;
+    padding-top: 2%; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    position: fixed; /* Fija la sidebar en su posición */
+    top: 70px; /* Ajusta según la altura del header y nav */
+    left: 0; /* Alinea la sidebar a la izquierda */
+    bottom: 60px; /* Deja espacio para el footer */
+    overflow-y: auto; /* Añade scroll vertical si el contenido es demasiado alto */
+    font-size: 14px; /* Tamaño de la fuente */
+    line-height: 1.5; /* Altura de línea para facilitar la lectura */
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-top: 5px solid #ff6f61;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
