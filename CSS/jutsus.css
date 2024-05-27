@@ -1,50 +1,48 @@
 /* Estilo para que las imágenes se oscurezcan al pasar el mouse */
+.imagen-container {
+    position: relative; /* Establece el contexto de posicionamiento para el contenido superpuesto */
+    display: inline-block;
+    margin: 10px; /* Espacio entre las imágenes */
+}
+
+.imagen-container:hover .texto-encima {
+    opacity: 1; /* Hace visible el texto cuando se pasa el mouse sobre el contenedor */
+}
+
 .imagen:hover {
-    filter: brightness(70%);
-    cursor: pointer;
+    filter: brightness(40%);
 }
 
 .imagen {
-    max-width: 300px; /* Ancho máximo de la imagen */
-    max-height: 200px; /* Altura máxima de la imagen */
-    width: auto; /* Para que la imagen mantenga su relación de aspecto original */
-    height: auto; /* Para que la imagen mantenga su relación de aspecto original */ max-width: 100%; /* Ancho máximo de la imagen */
+    max-width: 100%; /* Ancho máximo de la imagen */
     max-height: 200px; /* Altura máxima de la imagen */
     width: auto; /* Para que la imagen mantenga su relación de aspecto original */
     height: auto; /* Para que la imagen mantenga su relación de aspecto original */
-    margin: 10px; /* Espacio entre cada imagen */
-    position: relative; /* Establece el contexto de posicionamiento para el contenido superpuesto */
-}
-
-ul {
-    display: flex; /* Para que los elementos <li> se muestren en línea */
-    flex-wrap: wrap;
-    list-style-type: none; /* Para quitar los estilos de lista predeterminados */
-    padding: 0; /* Para eliminar el relleno predeterminado del elemento <ul> */
-    justify-content: center;
-}
-
-li {
-    margin-right: 20px; /* Espacio entre cada elemento <li> */
-    flex-basis: calc(25 - 10px);
-}
-
-.imagen:hover {
-    filter: brightness(70%);
     cursor: pointer;
+    transition: filter 0.3s;
 }
-
 
 .texto-encima {
     position: absolute; /* Posiciona el texto en relación con el contenedor de la imagen */
     top: 50%; /* Lo coloca en la mitad superior del contenedor */
     left: 50%; /* Lo coloca en el centro del contenedor */
-    color: white; /* Color del texto */
+    transform: translate(-50%, -50%); /* Centra el texto vertical y horizontalmente */
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255); /* Color del texto */
     padding: 10px; /* Espacio alrededor del texto */
     opacity: 0; /* El texto es invisible por defecto */
-    
+    transition: opacity 0.3s ease; /* Transición suave para hacer visible/invisible el texto */
 }
 
-.imagen:hover .texto-encima {
-    opacity: 10; /* Hace visible el texto cuando se pasa el mouse sobre la imagen */
+ul {
+    text-align: center; /* Centra los elementos de la lista */
+    padding: 0; /* Elimina el relleno predeterminado de la lista */
+    display: flex; /* Utiliza un contenedor flexible para las imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en filas cuando no haya suficiente espacio */
+    justify-content: center; /* Centra los elementos flexibles horizontalmente */
+}
+
+li {
+    list-style: none; /* Elimina los marcadores de lista */
 }
