@@ -1,0 +1,40 @@
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Estilos del recuadro de texto */
+.text-box {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 40px); /* Esto hace que cada recuadro ocupe el 33.33% del ancho del contenedor, con un espacio de 20px a cada lado */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho del elemento */
+}
+
+.text-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-box p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
