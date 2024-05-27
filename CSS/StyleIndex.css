@@ -41,19 +41,29 @@ nav a:hover {
 
 
 .SideBar {
-    width: 250px; /* Ancho de la sidebar */
-    background-color: #f4f4f4; /* Color de fondo */
+    width: 250px;
+    background-color: #f4f4f4;
     margin-top: 5%;
-    padding-top: 2%; /* Espaciado interno */
-    border: 1px solid #ddd; /* Borde */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
-    position: fixed; /* Fija la sidebar en su posición */
-    top: 70px; /* Ajusta según la altura del header y nav */
-    left: 0; /* Alinea la sidebar a la izquierda */
-    bottom: 60px; /* Deja espacio para el footer */
-    overflow-y: auto; /* Añade scroll vertical si el contenido es demasiado alto */
-    font-size: 14px; /* Tamaño de la fuente */
-    line-height: 1.5; /* Altura de línea para facilitar la lectura */
+    padding-top: 2%;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 70px;
+    left: 0;
+    bottom: 60px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Media query para ajustar el sidebar en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .SideBar {
+        width: 100%; /* Cambiar el ancho a 100% en pantallas pequeñas */
+        top: auto; /* Quitar la posición fija en la parte superior */
+        bottom: 0; /* Alinear el sidebar en la parte inferior */
+        z-index: 1; /* Asegurar que el sidebar esté encima del contenido central */
+    }
 }
 
 .container {
