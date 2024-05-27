@@ -59,7 +59,7 @@ nav a:hover {
 /* Media query para ajustar el sidebar en pantallas pequeñas */
 @media screen and (max-width: 768px) {
     .SideBar {
-        width: 100%; /* Cambiar el ancho a 100% en pantallas pequeñas */
+        width: 100%; 
         top: auto; /* Quitar la posición fija en la parte superior */
         bottom: 0; /* Alinear el sidebar en la parte inferior */
         z-index: 1; /* Asegurar que el sidebar esté encima del contenido central */
