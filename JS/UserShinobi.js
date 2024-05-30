@@ -12,13 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`Error en la solicitud: ${response.statusText}`);
             }
             const data = await response.json();
-            displayData(data);
+            sortAndDisplayData(data);
         } catch (error) {
             console.error('Error al obtener los datos:', error);
+            errorMessage.textContent = 'Error al obtener los datos.';
         }
     };
 
-    const displayData = (data) => {
+    const sortAndDisplayData = (data) => {
+        const villageOrder = ["Konoha", "Kirigakure", "Iwagakure", "Kumogakure", "Sunagakure"];
+        data.sort((a, b) => {
+            return villageOrder.indexOf(a.Aldea) - villageOrder.indexOf(b.Aldea);
+        });
+
         data.forEach(ninja => {
             const newRow = `
                 <tr>
@@ -33,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 primeraGeneracionTable.innerHTML += newRow;
             } else if (ninja.Generacion === "2") {
                 segundaGeneracionTable.innerHTML += newRow;
-            }else if (ninja.Generacion === "3") {
+            } else if (ninja.Generacion === "3") {
                 terceraGeneracionTable.innerHTML += newRow;
             }
         });
@@ -41,4 +47,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchData();
 });
-
