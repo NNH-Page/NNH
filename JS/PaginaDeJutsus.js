@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <h2>${jutsu.Nombre}</h2>
             <p>Rango : ${jutsu.Rango}</p>
             <p>Sellos : ${jutsu.Sellos}</p>
+            <p>Efecto : ${jutsu.Efecto} | Daño : ${jutsu.Daño}</p>
             <p>${jutsu.Descripción}</p>
             <a href="${jutsu.Wiki}">Wiki</a>
         `;
