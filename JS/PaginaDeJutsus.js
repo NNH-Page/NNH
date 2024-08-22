@@ -24,16 +24,46 @@ document.addEventListener('DOMContentLoaded', function() {
         jutsuBox.classList.add('text-box');
         
         jutsuBox.innerHTML = `
+        
             <h2>${jutsu.Nombre}</h2>
+            <button class="copy-btn">Copiar</button>
             <p>Rango : ${jutsu.Rango}</p>
             <p>Sellos : ${jutsu.Sellos}</p>
             <p>Efecto : ${jutsu.Efecto} | Daño : ${jutsu.Daño}</p>
             <p>${jutsu.Descripción}</p>
             <a href="${jutsu.Wiki}">Wiki</a>
+            
         `;
         
         container.appendChild(jutsuBox);
+    
+        // Agregar evento al botón de copiar
+        const copyBtn = jutsuBox.querySelector('.copy-btn');
+        copyBtn.addEventListener('click', function() {
+            const textoParaCopiar = `
+                Nombre: ${jutsu.Nombre}
+                Rango: ${jutsu.Rango}
+                Sellos: ${jutsu.Sellos}
+                Efecto: ${jutsu.Efecto} | Daño: ${jutsu.Daño}
+                Descripción: ${jutsu.Descripción}
+            `;
+            copiarAlPortapapeles(textoParaCopiar);
+        });
     }
+    
+    function copiarAlPortapapeles(texto) {
+        // Crear un elemento temporal para la copia
+        const tempInput = document.createElement('textarea');
+        tempInput.value = texto;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        
+        // Opcional: Mostrar un mensaje de confirmación
+        alert('Texto copiado al portapapeles!');
+    }
+    
 
     // Función para obtener los datos de la API y agregar los jutsus al contenedor
     function cargarJutsus(apiUrl, elemento) {
