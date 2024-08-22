@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const isRaitonPage = document.body.classList.contains('raiton-page');
     const isSuitonPage = document.body.classList.contains('suiton-page');
     const isTaijutsuPage = document.body.classList.contains('taijutsu-page');
+    const isGenjutsuPage = document.body.classList.contains('genjutsu-page');
+
 
     // Función para convertir el rango a un valor numérico para ordenar
     function rangoValor(rango) {
@@ -58,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         cargarJutsus(apiUrl, 'Suiton');
     } else if (isTaijutsuPage) {
         cargarJutsus(apiUrl, 'Taijutsu');
+    }else if (isGenjutsuPage) {
+        cargarJutsus(apiUrl, 'Genjutsu');
     } else {
         console.error('Página desconocida. No se pueden cargar los datos de los jutsus.');
     }
